@@ -1,5 +1,4 @@
-<template>
-  <div>
+<template>   <div>
     <v-text-field label="Pesquisar" variant="outlined" rounded />
 
     Tendencias - Mais populares
