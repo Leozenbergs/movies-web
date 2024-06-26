@@ -1,0 +1,26 @@
+import http from "../http-common";
+
+const fetchTMDB = async (url: string) => {
+  try {
+    const { data, status } = await http.get(url)
+    return {data, status}
+  } catch (error: any) {
+    return {status: error?.response?.status, message: error?.message}
+  }
+}
+
+export const getTrendingMovies = () => {
+  return fetchTMDB("/trending/movie/week")
+}
+
+export const getTrendingTv = () => {
+  return fetchTMDB("/trending/tv/week")
+}
+
+export const getTopRatedMovies = () => {
+  return fetchTMDB("/movie/top_rated")
+}
+
+export const getTopRatedTv = () => {
+  return fetchTMDB("/tv/top_rated")
+}
