@@ -6,6 +6,8 @@ import router from './router'
 
 loadFonts()
 
-createApp(App).use(router)
+export const app = createApp(App).use(router)
   .use(vuetify)
-  .mount('#app')
+
+app.mount('#app')
+
