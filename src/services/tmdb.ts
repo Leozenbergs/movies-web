@@ -1,8 +1,8 @@
 import http from "../http-common";
 
-const fetchTMDB = async (url: string) => {
+const fetchTMDB = async (url: string, page?: number) => {
   try {
-    const { data, status } = await http.get(url)
+    const { data, status } = await http.get(url, { params: { page }})
     return {data, status}
   } catch (error: any) {
     return {status: error?.response?.status, message: error?.message}
@@ -23,4 +23,12 @@ export const getTopRatedMovies = () => {
 
 export const getTopRatedTv = () => {
   return fetchTMDB("/tv/top_rated")
+}
+
+export const getMovieDetails = (id: string | string[]) => {
+  return fetchTMDB(`/movie/${id}`)
+}
+
+export const getMovies = (query: string, page: number) => {
+  return fetchTMDB(`/search/movie?query=${query}`, page)
 }
