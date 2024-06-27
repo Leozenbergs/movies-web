@@ -10,6 +10,7 @@
           rounded="xl"
           group
           class="mb-6 mt-4"
+          density="compact"
         >
           <v-btn value="trending">
             Tendências
@@ -32,6 +33,7 @@
           rounded="xl"
           group
           class="mb-6 mt-4"
+          density="compact"
         >
           <v-btn value="trending">
             Tendências
@@ -50,7 +52,7 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue';
 import { getTrendingMovies, getTopRatedMovies, getTopRatedTv, getTrendingTv } from "@/services/tmdb"
-import Carousel from '@/components/CarouselItems.vue';
+import Carousel from '@/components/CarouselMedia.vue';
 
 const trendingMovies = ref()
 const topRatedMovies = ref()
