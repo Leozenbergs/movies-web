@@ -1,5 +1,8 @@
 # movies-web
 
+## Description
+Simple SPA in Vue.js for consuming the TMDB api for movies and tv shows
+
 ## Project setup
 ```
 yarn install
