@@ -30,5 +30,9 @@ export const getMovieDetails = (id: string | string[]) => {
 }
 
 export const getMovies = (query: string, page: number) => {
-  return fetchTMDB(`/search/movie?query=${query}`, page)
+  return fetchTMDB(`/search/movie?query=${query}&append_to_response=credits`, page)
+}
+
+export const getMovieCrew = (id: string | string[]) => {
+  return fetchTMDB(`/movie/${id}/credits`)
 }

@@ -2,7 +2,7 @@
   <div class="text-center">
     <section class="mb-6">
       <div class="d-flex justify-space-between align-center">
-        <h2>Filmes</h2>
+        <h2>Movies</h2>
         <v-btn-toggle
           v-model="movieMode"
           color="primary"
@@ -13,11 +13,11 @@
           density="compact"
         >
           <v-btn value="trending">
-            Tendências
+            Trending
           </v-btn>
   
           <v-btn value="topRated">
-            Mais populares
+            Top rated
           </v-btn>
         </v-btn-toggle>
       </div>
@@ -25,7 +25,7 @@
     </section>
     <section>
       <div class="d-flex justify-space-between align-center">
-        <h2>Séries</h2>
+        <h2>Tv shows</h2>
         <v-btn-toggle
           v-model="tvMode"
           color="primary"
@@ -36,11 +36,11 @@
           density="compact"
         >
           <v-btn value="trending">
-            Tendências
+            Trending
           </v-btn>
   
           <v-btn value="topRated">
-            Mais populares
+            Top rated
           </v-btn>
         </v-btn-toggle>
       </div>
