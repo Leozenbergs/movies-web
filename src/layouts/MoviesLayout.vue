@@ -5,13 +5,13 @@
         class="d-flex justify-start align-center pl-6 cursor-pointer"
         @click="router.push('/')"
       >
-        TMDB Filmes
+        TMDB Movies
       </v-toolbar-title>
     </v-toolbar>
     <v-container class="h-100">
       <v-text-field
         v-model="search"
-        label="Pesquisar"
+        label="Search for a movie or tv series"
         variant="solo-filled"
         flat
         rounded
@@ -31,7 +31,7 @@
       color="amber-lighten-1"
       elevation="24"
     >
-      Especifique sua pesquisa
+      Specify your search
     </v-snackbar>
   </div>
 </template>
@@ -39,8 +39,10 @@
 <script setup>
 import { ref, watch  } from 'vue'
 import { useRoute, useRouter } from "vue-router"
+import { useMainStore } from "@/store";
 import FooterTmdb from "@/components/FooterTmdb.vue";
 
+const store = useMainStore()
 const router = useRouter()
 const route = useRoute()
 const search = ref('')
@@ -55,7 +57,8 @@ watch(showSnackbar, (value) => {
 
 const searchMovie = () => {
   if(search.value === "") return showSnackbar.value = true
-  router.replace({ ...route, query: { ...route.query, search: search.value }})
+  store.query = search.value
+  router.push(`/movies?search=${search.value}`)
 }
 </script>
 

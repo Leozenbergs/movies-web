@@ -1831,7 +1831,7 @@
   optionalDependencies:
     prettier "^1.18.2 || ^2.0.0"
 
-"@vue/devtools-api@^6.5.1":
+"@vue/devtools-api@^6.5.0", "@vue/devtools-api@^6.5.1":
   version "6.6.3"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.6.3.tgz#b23a588154cba8986bba82b6e1d0248bde3fd1a0"
   integrity sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==
@@ -4573,11 +4573,6 @@ minipass@^3.1.1:
   dependencies:
     yallist "^4.0.0"
 
-mitt@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/mitt/-/mitt-3.0.1.tgz#ea36cf0cc30403601ae074c8f77b7092cdab36d1"
-  integrity sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==
-
 mkdirp@^0.5.6:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.6.tgz#7def03d2432dcae4ba1d611445c48396062255f6"
@@ -4986,6 +4981,14 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
+
+pinia@^2.1.4:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.1.7.tgz#4cf5420d9324ca00b7b4984d3fbf693222115bbc"
+  integrity sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
+    vue-demi ">=0.14.5"
 
 pkg-dir@^4.1.0:
   version "4.2.0"
@@ -6289,6 +6292,11 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
+vue-cli-plugin-pinia@~0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-pinia/-/vue-cli-plugin-pinia-0.2.4.tgz#3ddb8898fe73cee021bbd3cb9b27ac5aaf130429"
+  integrity sha512-ZvY/d66Qr8WACtsZr79Nm/Eed2DSC5bcnyzg0oxYvYXzK0s9732RhJ/11sMDDz+ZTnHxZHM3awlpdC7i4meUFg==
+
 vue-cli-plugin-vuetify@~2.5.8:
   version "2.5.8"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.5.8.tgz#a67ef81375fb2cd9f4f912e665e5190de105f2f6"
@@ -6297,6 +6305,11 @@ vue-cli-plugin-vuetify@~2.5.8:
     null-loader "^4.0.1"
     semver "^7.1.2"
     shelljs "^0.8.3"
+
+vue-demi@>=0.14.5:
+  version "0.14.8"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.8.tgz#00335e9317b45e4a68d3528aaf58e0cec3d5640a"
+  integrity sha512-Uuqnk9YE9SsWeReYqK2alDI5YzciATE0r2SkA6iMAtuXvNTMNACJLJEXNXaEy94ECuBe4Sk6RzRU80kjdbIo1Q==
 
 vue-eslint-parser@^8.0.0, vue-eslint-parser@^8.0.1:
   version "8.3.0"

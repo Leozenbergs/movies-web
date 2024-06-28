@@ -13,8 +13,8 @@
         rounded="lg"
         @click="navigateTo(item?.id)"
       > 
-        <v-img :src="getImage(item.poster_path)" cover />
-        <v-card-title class="text-left pl-0 text-grey-darken-3">{{ item?.title || item?.original_name }}</v-card-title>
+        <v-img :src="getImage(item.profile_path)" cover :height="300" />
+        <v-card-title class="text-left pl-0 text-grey-darken-3">{{ item?.name }}</v-card-title>
       </v-card>
     </v-slide-group-item>
   </v-slide-group>

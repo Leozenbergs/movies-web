@@ -9,12 +9,21 @@
           v-if="index>0"
           :height="150"
           variant="tonal"
-          class="mb-4 py-0"
+          class="mb-4 py-0 cursor-pointer"
           rounded="lg"
           @click="router.push(`/movies/${item?.id}`)"
         >
           <div class="d-flex">
-            <img :src="getImage(item?.poster_path)" cover rounded="lg" :width="100" :height="150" />
+            <div style="width: 100; height: 150;">
+              <v-img
+                lazy-src="https://placehold.co/100x150"
+                :src="getImage(item?.poster_path)"
+                :width="100"
+                :height="150"
+                aspect-ratio="1"
+                eager
+              />
+            </div>
             <div class="px-4 py-2 text-left">
               <p>
                 <span class="text-h6">{{ item?.title }}</span> 
@@ -42,25 +51,30 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router'
+import { storeToRefs } from 'pinia'
+import { useMainStore } from '@/store'
 import useHelpers from '@/composables/useHelpers'
 import { getMovies } from "@/services/tmdb"
 
+const { query } = storeToRefs(useMainStore())
 const router = useRouter()
 const route = useRoute()
-const { truncate, formatDate } = useHelpers()
+const { truncate, formatDate, getImage } = useHelpers()
 
 const { search } = route?.query
 
 const total = ref()
 const currentPage = ref(1)
 
-const results = ref([])
+const results: any = ref([])
 
+watch(() => query.value, (value) => {
+  searchMovie(value)
+})
 
 watch(() => currentPage.value, () => {  
   searchMovie(search?.toString())
 })
-
 
 onMounted(() => {
   searchMovie(search?.toString())
@@ -74,13 +88,13 @@ const searchMovie = async (search: string | undefined) => {
   return
 }
 
-const getImage = (path: string) => {
-  return `https://image.tmdb.org/t/p/original/${path}`
-}
 </script>
 
-<style scoped>
+<style>
 .home {
   text-align: left;
+}
+.v-img ,img {
+  display: block !important;
 }
 </style>
